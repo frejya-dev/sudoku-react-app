@@ -11,6 +11,7 @@ function GameBoardDisplay(props){
                 /*determines background color of square*/
                 let x = Math.floor(j/3);
                 let y = Math.floor(i/3);
+                /* even number cells are gray, odd are white */
                 let color = (x + y) % 2 === 0 ? "grayBox" : "whiteBox";
 
                 let inputVal = props.boardData[i][j] ? props.boardData[i][j] : "";

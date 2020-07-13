@@ -8,6 +8,7 @@ const SudokuGenerator = require("js-sudoku-generator").SudokuGenerator;
 class App extends React.Component{
     constructor(props){
         super(props);
+        /* preset board stores position of starting puzzle elements, which are immutable */
         this.state = {
             gameBoardData: [],
             presetBoardData: [],
@@ -25,6 +26,7 @@ class App extends React.Component{
 
         let tempBoardData = [];
         let tempPresetData = [];
+
         for(let i = 0; i < 9; i++){
             let tempColBoard = [];
             let tempColPreset = [];
@@ -47,7 +49,8 @@ class App extends React.Component{
             solutionBoardData: generatedGameBoard.board
         });
     }
-    //checks whether move is coherent with rest of game board
+
+    /* checks whether move is coherent with rest of game board */
     validSudokuMove(yPos, xPos, gameBoard, val){
         //if player is deleting a value, its always coherent with board
         if(val == "") return true;
@@ -82,6 +85,7 @@ class App extends React.Component{
 
         return true;
     }
+
     checkSolution(gameBoard, solutionBoard){
         for(let i = 0; i < solutionBoard.length; i++){
             for(let j = 0; j < solutionBoard[0].length; j++){
@@ -92,17 +96,13 @@ class App extends React.Component{
 
         return true;
     }
-    inputHandler(yPos, xPos, event){
-        /* testing */
-        console.log(this.validSudokuMove(yPos, xPos, this.state.gameBoardData, event.target.value));
-        console.log(this.checkSolution(this.state.gameBoardData, this.state.solutionBoardData));
-        //////
 
+    inputHandler(yPos, xPos, event){
         event.persist();
+
         //if space prefilled
         if(this.state.presetBoardData[yPos][xPos] == 0){
             if(this.validSudokuMove(yPos, xPos, this.state.gameBoardData, event.target.value)){
-                console.log("this ran ");
                 this.setState(function(state, props){
                     let tempBoardData = this.state.gameBoardData;
                     tempBoardData[yPos][xPos] = event.target.value;
@@ -117,13 +117,11 @@ class App extends React.Component{
                 alert("invalid move");
             }
         }
-        console.log(this.state.solutionBoardData);
     }
     componentDidMount(){
         this.initGameBoard();
     }
     render(){
-        //console.log(this.state.gameBoardData);
         return (
             <div className="content">
                 <h className="mainHeader">Sudoku</h>
