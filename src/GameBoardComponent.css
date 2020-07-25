@@ -11,8 +11,7 @@
 
 .gameBoard{
     display: flex;
-    flex-flow: row wrap;
-    background-color: green;
+    flex-flow: row wrap; 
     border-style: solid; 
     border-width: 0px;
     margin: auto;
