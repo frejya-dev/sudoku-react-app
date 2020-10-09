@@ -1,4 +1,4 @@
-# Sudoky React App
+# Sudoku React App
 
 A simple web application for playing Sudoku. Please visit https://gravity-laboratories.github.io/sudoku-react-app/ to see it in action.
 
