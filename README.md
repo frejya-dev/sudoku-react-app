@@ -1,5 +1,4 @@
-# sudoku-react-app
-
+# Sudoky React App
 A simple web application for playing Sudoku
 
 ## Dependencies
