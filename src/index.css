@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Roboto', 'Poppins', 'Source Sans Pro',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mainHeader {
+  font-family: poppins;
+  color: #11426d;
+}
+
+button.newGameButton {
+  background: #11426d;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  border-radius: 20px;
+}
+
+button.newGameButton:hover {
+  background: #55c3ea;
+  transition: all 0.2s ease-out;
+}
+
+

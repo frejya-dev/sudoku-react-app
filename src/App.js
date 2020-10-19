@@ -1,10 +1,13 @@
 import React from 'react';
+import Navbar from "./components/Navbar/Navbar";
 import './App.css';
 import './GameBoardComponent.css';
 import GameBoardDisplay from './GameBoardComponent.js';
 const SudokuGenerator = require("js-sudoku-generator").SudokuGenerator;
 
+
 class App extends React.Component{
+
     constructor(props){
         super(props);
         /* preset board stores position of starting puzzle elements, which are immutable */
@@ -16,6 +19,7 @@ class App extends React.Component{
 
         this.inputHandler = this.inputHandler.bind(this);
         this.initGameBoard = this.initGameBoard.bind(this);
+
     }
 
     initGameBoard(){
@@ -123,6 +127,9 @@ class App extends React.Component{
     render(){
         return (
             <div className="content">
+                <div className="App">
+            <Navbar />
+        </div>
                 <h className="mainHeader">Sudoku</h>
                 <br/>
                 <GameBoardDisplay boardData={this.state.gameBoardData} inputHandler={this.inputHandler}/>
@@ -130,6 +137,7 @@ class App extends React.Component{
                 <button className="newGameButton" onClick={this.initGameBoard}> New Game </button>
 
             </div>
+            
         );
 
     }
